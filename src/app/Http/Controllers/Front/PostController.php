@@ -18,9 +18,7 @@ class PostController extends Controller
     {
         // 投稿一覧
         // 公開状態の投稿を新しい順に表示する
-        $posts = Post::where('is_public', true)
-            ->orderBy('published_at', 'desc')
-            ->paginate(10);
+        $posts = Post::publicList();
 
         return view('front.index', compact('posts'));
     }
@@ -55,7 +53,7 @@ class PostController extends Controller
     public function show(int $id)
     {
         // 投稿詳細
-        $post = Post::where('is_public', true)->findOrFail($id);
+        $post = Post::publicFindById($id);
         return view('front.show', compact('post'));
     }
 
