@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Fortify::createUsersUsing(CreateNewUser::class);
+        // Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
+        // Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
+        // Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+        App\Providers\FortifyServiceProvider::class,
+
     ],
 
     /*
