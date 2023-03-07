@@ -49,8 +49,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->as('front.')
                 ->group(base_path('routes/front.php'));
 
+            // 管理画面
             Route::prefix('admin')
-                ->middleware('web')
+                ->middleware(['web', 'auth'])
                 ->namespace($this->namespace, '\Back')
                 ->as('back.')
                 ->group(base_path('routes/back.php'));
