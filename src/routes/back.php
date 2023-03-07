@@ -1,6 +1,6 @@
 <?php
+
+use App\Http\Controllers\Back\DashboardController;
 use illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    echo 'back';
-});
+Route::get('/', 'Back\DashboardController')->name('dashboard');
